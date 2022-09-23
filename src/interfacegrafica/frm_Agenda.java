@@ -5,6 +5,7 @@
  */
 package interfacegrafica;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -82,6 +83,11 @@ public class frm_Agenda extends javax.swing.JFrame {
         });
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         btnAtualizar.setText("Atualizar");
 
@@ -113,9 +119,9 @@ public class frm_Agenda extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNome)
-                                    .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -157,6 +163,16 @@ public class frm_Agenda extends javax.swing.JFrame {
         Object[] dados = {txtNome.getText(), txtTelefone.getText()};
         dtmAgenda.addRow(dados);
     }//GEN-LAST:event_btnInserirActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        if (tbLista.getSelectedRow() != -1){
+            DefaultTableModel dtmAgenda = (DefaultTableModel) tbLista.getModel ();
+            dtmAgenda.removeRow(tbLista.getSelectedRow());
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione um registro p/ excluir");
+
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
