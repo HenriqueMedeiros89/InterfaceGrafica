@@ -43,8 +43,8 @@ public class frm_calculadora extends javax.swing.JFrame {
         rbMultiplicar = new javax.swing.JRadioButton();
         rbDividir = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SENAC");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Calculadora");
         setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
