@@ -46,10 +46,15 @@ public class frm_calculadora extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Calculadora");
         setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Unicode MS", 1, 26)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SENAC");
+        jLabel1.setText("Calculadora");
 
         jLabel2.setText("Valor A");
 
@@ -112,10 +117,6 @@ public class frm_calculadora extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(jButton1)
-                        .addGap(0, 58, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -132,13 +133,18 @@ public class frm_calculadora extends javax.swing.JFrame {
                         .addComponent(txtResultado)))
                 .addGap(60, 60, 60))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(rbMultiplicar)
-                    .addComponent(rbSubtrair, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rbSomar, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rbDividir, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(139, 139, 139))
+                .addGap(0, 147, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(rbMultiplicar)
+                            .addComponent(rbSubtrair, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbSomar, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbDividir, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(139, 139, 139))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(143, 143, 143))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +173,7 @@ public class frm_calculadora extends javax.swing.JFrame {
                     .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         pack();
@@ -231,6 +237,10 @@ public class frm_calculadora extends javax.swing.JFrame {
     private void rbSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSubtrairActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbSubtrairActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

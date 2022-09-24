@@ -41,7 +41,7 @@ public class frm_principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Geral");
+        setTitle("Menu");
         setPreferredSize(new java.awt.Dimension(400, 400));
         setResizable(false);
 
